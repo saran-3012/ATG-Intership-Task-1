@@ -118,6 +118,8 @@ function toggleMenu(child){
 
 window.onresize = function(event) {
     if(!isSignedIn){
-        openSignUp();
+        if(windowsContainer.style.display === 'flex' || mobileContainer.style.display === 'flex'){
+            openSignUp();
+        }
     }
 }
