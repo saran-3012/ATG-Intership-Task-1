@@ -13,9 +13,11 @@ function openSignUp(){
     if(!isSignedIn){
         scrollToTop();
         if(window.innerWidth < 768){
+            windowsContainer.style.display = 'none';
             mobileContainer.style.display = 'flex';
         }
         else{
+            mobileContainer.style.display = 'none';
             windowsContainer.style.display = 'flex';
         }
         pageBody.style.overflowY = 'hidden';
@@ -111,5 +113,11 @@ function toggleMenu(child){
         else{
             menu.style.display = 'flex';
         }
+    }
+}
+
+window.onresize = function(event) {
+    if(!isSignedIn){
+        openSignUp();
     }
 }
