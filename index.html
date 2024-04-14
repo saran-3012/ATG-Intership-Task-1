@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATG Task-1</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png" type="png">
+</head>
+<body>
+    <div id="navbar">
+        <div id="mobile_navbar">
+            <img src="./images/mobile_icons.png" alt="Icon" id="mobile_navbar_icon" onclick="openSignUp()">
+        </div>
+        <div id="dektop_navbar">
+            <img src="./images/windows_icon.png" alt="Icon">
+            <div id="searchbar_navbar">
+                <img src="./images/searchBtn.png" alt="I" id="search_icon">
+                <input onfocus="openSignUp()" type="text" id="searchbar" placeholder="Search for your favorite groups in ATG">
+            </div>
+            <div id="signin_signup">
+                <p id="signin">Create account. <span onclick="openSignUp()">It's free! </span><img src="./images/down_arrow.png" alt="v"></p>
+                <p id="signup"><img src="./images/profile_pic.png" alt="PFP"> Siddharth Goyal <img src="./images/down_arrow.png" alt="v"></p>
+            </div>
+        </div>
+    </div>
+    <div id="home_container">
+        <div id="home_container_mobile">
+            <img src="./images/back_arrow.png" alt="<-" id="mobile_back">
+            <span onclick="joinGroupMobile(this)" id="mobile_join_group">Join Group</span>
+        </div>
+        <div id="home_headers">
+            <h1>Computer Engineering</h1>
+            <p>142,765 Computer Engineers follow this</p>
+        </div>
+    </div>
+    <div id="outer_feed_container">
+        <div id="inner_feed_container">
+            <div id="feed_navbar">
+                <div id="mobile_feed_navbar">
+                    <span>Posts(368)</span>
+                    <button>Filter: All <img src="./images/down_arrow.png" alt="v"></button>
+                </div>
+                <div id="windows_feed_navbar">
+                    <span id="active_navbar_item" class="feed_navbar_items">All Posts(32)</span>
+                    <span class="feed_navbar_items">Article</span>
+                    <span class="feed_navbar_items">Event</span>
+                    <span class="feed_navbar_items">Education</span>
+                    <span class="feed_navbar_items">Job</span>
+                    <button class="feed_navbar_btn" id="windows_write_post" onclick="openSignUp()">Write a Post <img src="./images/down_arrow.png" alt="v"></button>
+                    <button class="feed_navbar_btn" id="windows_join_group" onclick="joinGroupWindows(this)"><img src="./images/join_group.png" alt="+"> Join Group</button>
+                </div>
+            </div>
+            <div id="feed_container" >
+                <div id="feeds" >
+                    <div class="feed">
+                        <img src="./images/feed_img1.png" alt="" class="feed_img">
+                        <div class="feed_details">
+                            <span>✍️ Article</span>
+                            <div class="feed_header">
+                                <h4>What if famous brands had regular fonts? Meet RegulaBrands!</h4>
+                                <span onclick="toggleMenu(this)" class="three_dots_menu"><img src="./images/triple_dot_menu.png" alt="Menu"></span>
+                                <span onclick="toggleMenu(this)" class="feed_dropdown_menu">
+                                    <p>Edit</p>
+                                    <p>Report</p>
+                                    <p>Share</p>
+                                </span>
+                            </div>
+                            <p class="feed_contant">I’ve worked in UX for the better part of a decade. From now on, I plan to reimagine the way users interact with digital products and create seamless experiences that delight and engage.</p>
+                            <div class="feed_author">
+                                <span class="feed_author_details">
+                                    <img src="./images/profile_pic1.png" alt="" class="feed_author_pic">
+                                    <span class="feed_author_name">
+                                        <p>Sarthak Kamra</p>
+                                        <span class="feed_views">
+                                            <img src="./images/eye_icon.png" alt="Eye"><p>1.4k views</p>
+                                        </span>
+                                    </span>
+                                </span>
+                                <span class="share_feed">
+                                    <span class="feed_views">
+                                        <img src="./images/eye_icon.png" alt="Eye"><p>1.4k views</p>
+                                    </span>
+                                    <button onclick="openSignUp()"><img src="./images/share_icon.png" alt="Share"> <p>Share</p></button>
+                                </span>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="feed">
+                        <img src="./images/feed_img2.png" alt="" class="feed_img">
+                        <div class="feed_details">
+                            <span>🔬️ Education</span>
+                            <div class="feed_header">
+                                <h4>Tax Benefits for Investment under National Pension Scheme launched by Government</h4>
+                                <span onclick="toggleMenu(this)" class="three_dots_menu"><img src="./images/triple_dot_menu.png" alt="Menu"></span>
+                                <span onclick="toggleMenu(this)" class="feed_dropdown_menu">
+                                    <p>Edit</p>
+                                    <p>Report</p>
+                                    <p>Share</p>
+                                </span>
+                            </div>
+                            <p class="feed_contant">I’ve worked in UX for the better part of a decade. From now on, I plan to reimagine the way users interact with digital products and create seamless experiences that delight and engage.</p>
+                            <div class="feed_author">
+                                <span class="feed_author_details">
+                                    <img src="./images/profile_pic2.png" alt="" class="feed_author_pic">
+                                    <span class="feed_author_name">
+                                        <p>Sarah West</p>
+                                        <span class="feed_views">
+                                            <img src="./images/eye_icon.png" alt="Eye"><p>4.8k views</p>
+                                        </span>
+                                    </span>
+                                </span>
+                                <span class="share_feed">
+                                    <span class="feed_views">
+                                        <img src="./images/eye_icon.png" alt="Eye"><p>4.8k views</p>
+                                    </span>
+                                    <button onclick="openSignUp()"><img src="./images/share_icon.png" alt="Share"> <p>Share</p></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feed">
+                        <img src="./images/feed_img3.png" alt="" class="feed_img">
+                        <div class="feed_details">
+                            <span>🗓️ Meetup</span>
+                            <div class="feed_header">
+                                <h4>Finance & Investment Elite Social Mixer @Lujiazui</h4>
+                                <span onclick="toggleMenu(this)" class="three_dots_menu"><img src="./images/triple_dot_menu.png" alt="Menu"></span>
+                                <span onclick="toggleMenu(this)" class="feed_dropdown_menu">
+                                    <p>Edit</p>
+                                    <p>Report</p>
+                                    <p>Share</p>
+                                </span>
+                            </div>
+                            <span class="feed_extras">
+                                <span class="feed_extra_items">
+                                    <img src="./images/calander_icon.png" alt="Date"> Fri, 12 Oct, 2018
+                                </span>
+                                <span class="feed_extra_items">
+                                    <img src="./images/location.png" alt="Location"> Ahmedabad, India
+                                </span>
+                            </span>
+                            <button id="feed_btn1" class="feed_btn">Visit Website</button>
+                            <div class="feed_author">
+                                <span class="feed_author_details">
+                                    <img src="./images/profile_pic3.png" alt="" class="feed_author_pic">
+                                    <span class="feed_author_name">
+                                        <p>Ronal Jones</p>
+                                        <span class="feed_views">
+                                            <img src="./images/eye_icon.png" alt="Eye"><p>800 views</p>
+                                        </span>
+                                    </span>
+                                </span>
+                                <span class="share_feed">
+                                    <span class="feed_views">
+                                        <img src="./images/eye_icon.png" alt="Eye"><p>800 views</p>
+                                    </span>
+                                    <button onclick="openSignUp()"><img src="./images/share_icon.png" alt="Share"> <p>Share</p></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feed">
+                        <div class="feed_details">
+                            <span>💼️ Job</span>
+                            <div class="feed_header">
+                                <h4>Software Developer</h4>
+                                <span onclick="toggleMenu(this)" class="three_dots_menu"><img src="./images/triple_dot_menu.png" alt="Menu"></span>
+                                <span onclick="toggleMenu(this)" class="feed_dropdown_menu">
+                                    <p>Edit</p>
+                                    <p>Report</p>
+                                    <p>Share</p>
+                                </span>
+                            </div>
+                            <span class="feed_extras">
+                                <span class="feed_extra_items">
+                                    <img src="./images/job_icon.png" alt="Job"> Innovaccer Analytics Private Ltd.
+                                </span>
+                                <span class="feed_extra_items">
+                                    <img src="./images/location.png" alt="Location"> Noida, India
+                                </span>
+                            </span>
+                            <button id="feed_btn2" class="feed_btn">Apply on Timesjobs</button>
+                            <div class="feed_author">
+                                <span class="feed_author_details">
+                                    <img src="./images/profile_pic4.png" alt="" class="feed_author_pic">
+                                    <span class="feed_author_name">
+                                        <p>Joseph Gray</p>
+                                        <span class="feed_views">
+                                            <img src="./images/eye_icon.png" alt="Eye"><p>1.7k views</p>
+                                        </span>
+                                    </span>
+                                </span>
+                                <span class="share_feed">
+                                    <span class="feed_views">
+                                        <img src="./images/eye_icon.png" alt="Eye"><p>1.7k views</p>
+                                    </span>
+                                    <button onclick="openSignUp()"><img src="./images/share_icon.png" alt="Share"> <p>Share</p></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="window_feed_location">
+                    <span id="location_input_container">
+                        <img id="location_symbol" src="./images/location.png" alt="Location">
+                        <input id="location_input" type="text" placeholder="Enter your location" value="Nodia, India" onfocus="openSignUp()">
+                        <img id="location_edit" src="./images/edit_pencil.png" alt="Toggle">
+                    </span>
+                    <span id="location_input_info">
+                        <img src="./images/info_icon.png" alt="">
+                        <p>Your location will help us serve better and extend a personalised experience.</p>
+                    </span>
+                    <span id="recommended_groups">
+                        <span id="recommended_groups_header"><img src="./images/thumbs_up.png" alt="Thumb"><p>RECOMMENDED GROUPS</p></span>
+                        <span class="group_infos">
+                            <img src="./images/group_pic1.png" alt="GP">
+                            <p>Leisure</p>
+                            <button onclick="followGroup(this)">Follow</button>
+                        </span>
+                        <span class="group_infos">
+                            <img src="./images/group_pic2.png" alt="GP">
+                            <p>Activism</p>
+                            <button onclick="followGroup(this)">Follow</button>
+                        </span>
+                        <span class="group_infos">
+                            <img src="./images/group_pic3.png" alt="GP">
+                            <p>MBA</p>
+                            <button onclick="followGroup(this)">Follow</button>
+                        </span>
+                        <span class="group_infos">
+                            <img src="./images/group_pic4.png" alt="GP">
+                            <p>Philosophy</p>
+                            <button onclick="followGroup(this)">Follow</button>
+                        </span>
+                        <span id="see_more">See More...</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span id="mobile_write_post" onclick="openSignUp()">
+        <img src="./images/edit_pencil_mobile.png" alt="Edit">
+    </span>
+    <div id="outer_mobile_signin_signup_container" onclick="closeSignUp()">
+        <div id="mobile_signup_container" onclick="stopClose(event)">
+            <span class="mobile_signin_signup_header">
+                <h3>Create Account</h3>
+                <button onclick="closeSignUp()"></button>
+            </span>
+            <span id="mobile_signup_grid">
+                <input class="signin_signup_inputs" type="text" name="First Name" placeholder="First Name" id="first_name">
+                <input class="signin_signup_inputs" type="text" name="Last Name" placeholder="Last Name" id="last_name">
+                <input class="signin_signup_inputs" type="email" name="Email" placeholder="Email" id="signup_email">
+                <input class="signin_signup_inputs" type="password" name="Password" placeholder="Password" id="signup_password">
+                <input class="signin_signup_inputs" type="password" name="Confirm Password" placeholder="Confirm Password" id="confirm_password">
+            </span>
+            <span class="mobile_signin_signup_btn">
+                <button onclick="signIn()">Create Account</button>
+                <span onclick="switchSigninSignup()">or, Sign In</span>
+            </span>
+            <span class="mobile_other_signin_signup">
+                <button onclick="signIn()"><img src="./images/facebook_logo.png" alt="Facebook"><p>Sign up with Facebook</p></button>
+                <button onclick="signIn()"><img src="./images/google_logo.png" alt="Google"><p>Sign up with Google</p></button>
+            </span>
+            <p id="mobile_signup_tc">
+                By signing up, you agree to our Terms & conditions, Privacy policy
+            </p>
+            <span></span>
+        </div>
+        <div id="mobile_signin_container" onclick="stopClose(event)">
+            <span class="mobile_signin_signup_header">
+                <h3>Welcome Back!</h3>
+                <button onclick="closeSignUp()"></button>
+            </span>
+            <span id="mobile_signin_grid">
+                <input class="signin_signup_inputs" type="email" name="Email" placeholder="Email" id="signin_email">
+                <input class="signin_signup_inputs" type="password" name="Password" placeholder="Password" id="signin_password">
+            </span>
+            <span class="mobile_signin_signup_btn">
+                <button onclick="signIn()">Sign In</button>
+                <span onclick="switchSigninSignup()">or, Create Account</span>
+            </span>
+            <span class="mobile_other_signin_signup">
+                <button onclick="signIn()"><img src="./images/facebook_logo.png" alt="Facebook"><p>Sign in with Facebook</p></button>
+                <button onclick="signIn()"><img src="./images/google_logo.png" alt="Google"><p>Sign in with Google</p></button>
+            </span>
+            <p id="forgot_password">
+                Forgot Password?
+            </p>
+            <span></span>
+        </div>
+    </div>
+    <div id="outer_windows_signin_signup_container" onclick="closeSignUp()">
+        <div class="windows_sigin_signup_container">
+            <button class="cancel_signin_signup" onclick="closeSignUp()"></button>
+            <div id="windows_signup_container" onclick="stopClose(event)">
+                <span class="windows_signin_signup_comment">Let's learn, share & inspire each other with our passion for computer engineering. Sign up now 🤘🏼</span>
+                <div class="inner_windows_signin_signup_container">
+                    <div class="inner_windows_signin_signup_container1">
+                        <h3 class="windows_signin_signup_header">Create Account</h3>
+                        <div id="windows_signup_grid">
+                            <input class="windows_signin_signup_inputs" type="text" placeholder="First Name" id="windows_first_name">
+                            <input class="windows_signin_signup_inputs" type="text" placeholder="Last Name" id="windows_last_name">
+                            <input class="windows_signin_signup_inputs" type="email" placeholder="Email" id="windows_signup_email">
+                            <input class="windows_signin_signup_inputs" type="password" placeholder="Password" id="windows_signup_password">
+                            <input class="windows_signin_signup_inputs" type="password" placeholder="Confirm Password" id="windows_confirm_password">
+                        </div>
+                        <button class="windows_signin_signup_btn" onclick="signIn()">Create Account</button>
+                        <button class="windows_other_signin_signup" onclick="signIn()"><img src="./images/facebook_logo.png" alt="Facebook"><p>Sign up with Facebook</p></button>
+                        <button class="windows_other_signin_signup" onclick="signIn()"><img src="./images/google_logo.png" alt="Google"><p>Sign up with Google</p></button>
+                    </div>
+                    <div class="inner_windows_signin_signup_container1">
+                        <span class="windows_switch_signin_signup">
+                            <span>Already have an account?</span>
+                            <span class="windows_switch_signin_signup_btn" onclick="switchSigninSignup()">Sign In</span>
+                        </span>
+                        <img class="windows_signin_signup_img" src="./images/signin_signup_image.png" alt="We Love You!">
+                        <p id="windows_signup_tc">By signing up, you agree to our Terms & conditions, Privacy policy</p>
+                    </div>
+                </div>
+            </div>
+            <div id="windows_signin_container" onclick="stopClose(event)">
+                <span class="windows_signin_signup_comment">Let's learn, share & inspire each other with our passion for computer engineering. Sign up now 🤘🏼</span>
+                <div class="inner_windows_signin_signup_container">
+                    <div class="inner_windows_signin_signup_container1">
+                        <h3 class="windows_signin_signup_header">Sign In</h3>
+                        <div id="windows_signin_grid">
+                            <input class="windows_signin_signup_inputs" type="email" placeholder="Email" id="windows_signin_email">
+                            <input class="windows_signin_signup_inputs" type="password" placeholder="Password" id="windows_signin_password">
+                        </div>
+                        <button class="windows_signin_signup_btn" onclick="signIn()">Sign In</button>
+                        <button class="windows_other_signin_signup" onclick="signIn()"><img src="./images/facebook_logo.png" alt="Facebook"><p>Sign in with Facebook</p></button>
+                        <button class="windows_other_signin_signup" onclick="signIn()"><img src="./images/google_logo.png" alt="Google"><p>Sign in with Google</p></button>
+                        <span id="windows_forgot_password">Forgot Password?</span>
+                    </div>
+                    <div class="inner_windows_signin_signup_container1">
+                        <span class="windows_switch_signin_signup">
+                            <span>Dont have an account yet?</span>
+                            <span class="windows_switch_signin_signup_btn" onclick="switchSigninSignup()">Create new for free!</span>
+                        </span>
+                        <img class="windows_signin_signup_img" src="./images/signin_signup_image.png" alt="We Love You!">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="actions.js"></script>
+</body>
+</html>

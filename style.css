@@ -1,0 +1,909 @@
+@import url("https://fonts.googleapis.com/css?family=IBM Plex Sans");
+html{
+    scroll-behavior: smooth;
+}
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    font-family: 'IBM Plex Sans';
+}
+
+#navbar{
+    display: flex;
+    max-width: 100%;
+    width: 100svw;
+    align-items: center;
+    position: -webkit-sticky;
+    position: sticky;
+    background-color: white;
+    border-bottom: 1px solid rgba(88, 88, 88, 0.772);
+    top: 0;
+    z-index: 10;
+}
+#mobile_navbar{
+    display: flex;
+    flex-shrink: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: end;
+    height: 24px;
+}
+#mobile_navbar_icon{
+    margin-right: 12px;
+}
+#dektop_navbar{
+    display: flex;
+    flex-shrink: 0;
+    width: 100%;
+    height: 72px;
+    align-items: center;
+    justify-content: space-around;
+}
+#searchbar_navbar{
+    width: 30%;
+    height: 42px;
+    background-color: #F2F2F2;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+#search_icon{
+    margin: 12px;
+}
+#searchbar{
+    width: 80%;
+    outline: none;
+    border: none;
+    background-color: #F2F2F2;
+}
+#signin_signup{
+    display: flex;
+    align-items: center;
+}
+#signin, #signup{
+    display: flex;
+    align-items: center;
+    margin: auto 1.5px;
+    cursor: pointer;
+}
+#signup{
+    display: none;
+}
+#signin span{
+    font-weight: bold;
+    color: rgb(47, 108, 229);
+}
+#home_container{
+    background-image: url(./images/background_image.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+#home_headers{
+    position: relative;
+    margin-left: 10%;
+    top: 75%;
+}
+#home_headers > h1{
+    font-weight: bold;
+}
+#home_headers > p{
+    font-size: 120%;
+}
+#home_container_mobile{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+#mobile_back{
+    margin: 16px;
+    padding: 6px;
+    border-radius: 100%;
+}
+#mobile_back:hover, #mobile_join_group:hover{
+    transition: all 250ms ease-in-out;
+    background-color: rgba(80, 80, 80, 0.432);
+}
+#mobile_join_group{
+    margin: 16px;
+    border: 1px solid white;
+    width: fit-content;
+    height: 28px;
+    padding: 0 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#outer_feed_container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#inner_feed_container{
+    min-width: 80%;
+    max-width: 85%;
+}
+#feed_navbar{
+    width: 100%;
+    margin-bottom: 12px;
+    z-index: 9;
+    padding-top: 32px;
+    position: sticky;
+    top: 40px;
+    background-color: white;
+}
+#mobile_feed_navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#mobile_feed_navbar > *{
+    margin: auto 5%;
+}
+#mobile_feed_navbar > span{
+    font-weight: bold;
+}
+#mobile_feed_navbar > button{
+    background-color: rgb(241, 243, 245);
+    height: 32px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    border: none;
+    align-self: center;
+}
+#windows_feed_navbar{
+    width: 100%;
+    height: 54px;
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+    display: flex;
+    align-items: end;
+}
+.feed_navbar_items{
+    font-size: 16px;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.687);
+    cursor: pointer;
+}
+.feed_navbar_items::after{
+    content: "";
+    margin-top: 0.8rem;
+    width: 0%;
+    height: 1.2px;
+    background-color: black;
+    transition: all 200ms ease;
+}
+.feed_navbar_items:hover::after, .feed_navbar_items:active::after, #active_navbar_item::after{
+    width: 100%;
+}
+.feed_navbar_items:hover, .feed_navbar_items:active, #active_navbar_item{
+    color: black;
+}
+.feed_navbar_btn{
+    font-size: 15px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    border: none;
+    align-self: center;
+    margin: auto 0% auto auto;
+    cursor: pointer;
+}
+.feed_navbar_btn > *{
+    margin: auto 4px;
+}
+#windows_write_post{
+    background-color: rgb(237, 238, 240);
+}
+#windows_join_group{
+    margin-left: 16px;
+    background-color: rgb(47, 108, 229);
+    color: white;
+}
+#feed_container{
+    display: flex;
+    justify-content: space-between;
+}
+#feeds{
+    width: 66.5%;
+}
+.feed{
+    display: flex;
+    flex-direction: column;
+    margin: 12px auto;
+    border-radius: 4px;
+    border: 1px solid rgba(224, 224, 224, 1);
+}
+.feed_img{
+    max-width: 100%;
+}
+.feed_details{
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+}
+.feed_details > *{
+    margin-bottom: 12px;
+}
+.feed_header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: first baseline;
+}
+.feed_header > h4{
+    width: 95%;
+}
+.three_dots_menu{
+    aspect-ratio: 1;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.three_dots_menu:hover{
+    background-color: rgba(191, 191, 192, 1);
+}
+.feed_dropdown_menu{
+    display: none;
+    position: absolute;
+    z-index: 5;
+    top: 30px;
+    right: 0;
+    width: 160px;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: white;
+    filter: drop-shadow(0 0 2px 0 rgba(0, 0, 0, 0.8)) drop-shadow(0 2px 8px 0 rgba(0, 0, 0, 0.16));
+}
+.feed_dropdown_menu > p{
+    height: 32px;
+    width: 100%;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+.feed_dropdown_menu > p:hover{
+    background-color: rgba(101, 101, 101, 0.573);
+}
+.feed_contant{
+    color:rgba(92, 92, 92, 1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.feed_extras{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 75%;
+}
+.feed_extra_items{
+    width: 50%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.feed_btn{
+    background-color: white;
+    height: 34px;
+    border-radius: 10px;
+    border: 1px solid rgba(169, 174, 184, 1);
+}
+#feed_btn1{
+    color: rgba(229, 97, 53, 1);
+}
+  
+#feed_btn2{
+    color: rgba(2, 184, 117, 1);
+}
+.feed_author{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.feed_author_details{
+    display: flex;
+    align-items: center;
+}
+.feed_author_pic{
+    border-radius: 100%;
+    max-width: 100%;
+    margin-right: 10px;
+}
+.feed_author_name{
+    display: flex;
+    flex-direction: column;
+}
+.feed_author_name > p{
+    margin: 0%;
+}
+.share_feed{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 35%;
+    color: rgba(82, 82, 82, 1);
+}
+.share_feed > button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto 0% auto auto;
+    border: none;
+    border-radius: 2px;
+    padding: 9px;
+}
+.share_feed > button:hover{
+    background-color: rgba(82, 82, 82, 0.25);
+}
+.feed_views{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+.feed_views > p{
+    margin: 0 0 0 2px;
+}
+#window_feed_location{
+    z-index: 8;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+#location_input_container, #location_input_info{
+    display: flex;
+    font-size: 12px;
+    margin-top: 32px;
+}
+#location_input_container{
+    align-items: center;
+    border-bottom: 1px solid rgb(184, 184, 184);
+}
+#location_input_info{
+    align-items: flex-start;
+    color: rgba(59, 59, 59, 0.763);
+}
+#location_input_info > img{
+    margin: 2px 5% auto auto;
+}
+#location_input{
+    font-size: 14px;
+    width: 80%;
+    border: none;
+    outline: none;
+}
+#location_input:focus + #location_edit{
+    content: url(./images/edit_cancel.png);
+}
+#recommended_groups{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+#recommended_groups_header{
+    display: flex;
+    width: 100%;
+    align-self: flex-start;
+    align-items: center;
+    margin-top: 24px;
+}
+#recommended_groups_header > p{
+    margin: 0 0 0 2px;
+    size: 12px;
+    font-weight: 500;
+}
+.group_infos{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin: 12px auto;
+}
+.group_infos > img{
+    border-radius: 100%;
+}
+.group_infos > p{
+    margin: 0% auto 0% 5%;
+}
+.group_infos > button{
+    margin: auto 0% auto auto;
+    border-radius: 14px;
+    height: 24px;
+    padding: auto 12px;
+    border: none;
+    text-align: center;
+    font-size: 12px;
+    background-color: rgb(237, 238, 240);
+    color: black;
+}
+#see_more{
+    color: rgba(47, 108, 229, 1);
+    font-size: 12px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+#mobile_write_post{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 10px;
+    background-image: linear-gradient(180deg, #FF5C5C 0%, #F0568A 100%);
+    border-radius: 100%;
+    position: fixed;
+    bottom:5%;
+    right: 5%;
+}
+#outer_mobile_signin_signup_container{
+    width: 100%;
+    height: 100svh;
+    background-color: rgba(33, 37, 41, 0.6);
+    z-index: 20;
+    position: absolute;
+    top: 0%;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+#mobile_signup_container, #mobile_signin_container{
+    background-color: white;
+    border-radius: 8px 8px 0px 0px;
+    height: 72%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#mobile_signin_container{
+    display: none;
+}
+.mobile_signin_signup_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.mobile_signin_signup_header > h3{
+    font-size: 18px;
+    font-weight: 1000;
+    margin: 0;
+}
+.mobile_signin_signup_header > button{
+    background-color: white;
+    background-image: url(./images/signin_signup_cancel.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 15px;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    border: none;
+}
+#mobile_signup_grid{
+    margin-top: 20px;
+    display: grid;
+    width: 100%;
+    height: fit-content;
+    grid-template-areas:    "First Last"
+                            "Email Email"
+                            "Password Password"
+                            "Cpassword Cpassword";
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+}
+.signin_signup_inputs{
+    background-color: rgba(247, 248, 250, 1);
+    border: 1px solid rgba(217, 217, 219, 1);
+    font-size: 13px;
+    height: 40px;
+    padding-left: 0.8rem;
+}
+#first_name{
+    grid-area: First;
+    border-radius: 2px 0 0 0;
+}
+#last_name{
+    grid-area: Last;
+    border-radius: 0 2px 0 0;
+}
+#signup_email{
+    grid-area: Email;
+}
+#signup_password{
+    grid-area: Password;
+}
+#confirm_password{
+    grid-area: Cpassword;
+    border-radius: 0 0 2px 2px;
+}
+.mobile_signin_signup_btn{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 22px 0 0 0;
+}
+.mobile_signin_signup_btn > button{
+    width: 47%;
+    height: 36px;
+    border-radius: 20px;
+    background-color: rgba(47, 108, 229, 1);
+    color: white;
+    border: none;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+}
+.mobile_signin_signup_btn > span{
+    text-decoration: underline;
+    font-size: 13px;
+    font-weight: 500;
+}
+.mobile_signin_signup_btn > span:hover, .mobile_signin_signup_btn > span:active{
+    color: rgba(47, 108, 229, 1);
+}
+.mobile_other_signin_signup{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin: 12px 0 0 0;
+}
+.mobile_other_signin_signup > button{
+    display: flex;
+    width: 100%;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+    border: 0.6px solid rgba(217, 217, 219, 1);
+    border-radius: 2px;
+    margin: 12px 0 0 0;
+}
+.mobile_other_signin_signup > button > img{
+    margin: 0 5px 0 0;
+}
+.mobile_other_signin_signup > button > p{
+    margin: 0 0 0 5px;
+    font-size: 13px;
+    line-height: 16px;
+}
+#mobile_signup_tc{
+    margin-top: 22px;
+    display: flex;
+    text-align: center;
+    width: 75%;
+    font-size: 11px;
+    color: rgba(33, 37, 41, 1);
+    line-height: 16px;
+}
+#mobile_signin_grid{
+    display: grid;
+    grid-template-areas:    "Email Email"
+                            "Password Password";
+    margin-top: 20px;
+    width: 100%;
+    height: fit-content;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+}
+#signin_email{
+    grid-area: Email;
+    border-radius: 2px 2px 0 0;
+}
+#signin_password{
+    grid-area: Password;
+    border-radius: 0 0 2px 2px;
+}
+#forgot_password{
+    margin-top: 22px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 75%;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(33, 37, 41, 1);
+    line-height: 16px;
+}
+#outer_windows_signin_signup_container{
+    width: 100%;
+    height: 100svh;
+    background-color: rgba(33, 37, 41, 0.6);
+    z-index: 20;
+    position: absolute;
+    top: 0%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.windows_sigin_signup_container{
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+}
+.cancel_signin_signup{
+    align-self: flex-end;
+    background-color: transparent;
+    background-image: url(./images/windows_signin_signup_cancel.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    border: none;
+}
+#windows_signup_container, #windows_signin_container{
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 1);
+    filter: drop-shadow(0 8px 24px 0 rgba(0 0 0 0.25));
+}
+#windows_signin_container{
+    display: none;
+}
+.windows_signin_signup_comment{
+    height: 50px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    color: rgba(0, 138, 69, 1);
+    background-color: rgba(239, 255, 244, 1);
+    border-radius: 8px 8px 0 0;
+}
+.inner_windows_signin_signup_container{
+    display: flex;
+    flex-direction: row;
+    padding: 24px 36px;
+    justify-content: space-between;
+}
+.inner_windows_signin_signup_container1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+}
+.windows_signin_signup_header{
+    align-self: flex-start;
+    font-size: 24px;
+    font-weight: bolder;
+}
+#windows_signup_grid{
+    display: grid;
+    margin-top: 24px;
+    width: 100%;
+    height: fit-content;
+    grid-template-areas:    "First Last"
+                            "Email Email"
+                            "Password Password"
+                            "Cpassword Cpassword";
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+}
+.windows_signin_signup_inputs{
+    background-color: rgba(247, 248, 250, 1);
+    border: 1px solid rgba(217, 217, 219, 1);
+    font-size: 13px;
+    height: 46px;
+    padding-left: 0.8rem;
+}
+#windows_first_name{
+    grid-area: First;
+    border-radius: 2px 0 0 0;
+}
+#windows_last_name{
+    grid-area: Last;
+    border-radius: 0 2px 0 0;
+}
+#windows_signup_email{
+    grid-area: Email;
+}
+#windows_signup_password{
+    grid-area: Password;
+}
+#windows_confirm_password{
+    grid-area: Cpassword;
+    border-radius: 0 0 2px 2px;
+}
+.windows_signin_signup_btn{
+    width: 100%;
+    margin: 18px 0 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgba(47, 108, 229, 1);
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+}
+.windows_other_signin_signup{
+    display: flex;
+    width: 100%;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+    border: 0.6px solid rgba(217, 217, 219, 1);
+    border-radius: 2px;
+    margin: 0 0 12px 0;
+}
+.windows_other_signin_signup >  img{
+    margin: 0 5px 0 0;
+}
+.windows_other_signin_signup >  p{
+    margin: 0 0 0 5px;
+    font-size: 13px;
+    line-height: 16px;
+}
+.windows_switch_signin_signup{
+    align-self: flex-end;
+    font-size: 13px;
+}
+.windows_switch_signin_signup_btn{
+    color: rgba(47, 108, 229, 1);
+    font-weight: 600;
+}
+.windows_signin_signup_img{
+    margin-top: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+#windows_signup_tc{
+    margin-top: auto;
+    margin-bottom: 16px;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    font-size: 11px;
+    color: rgba(33, 37, 41, 1);
+    line-height: 16px;
+}
+#windows_signin_grid{
+    display: grid;
+    margin-top: 24px;
+    width: 100%;
+    height: fit-content;
+    grid-template-areas:    "Email Email"
+                            "Password Password";
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+}
+#windows_signin_email{
+    grid-area: Email;
+    border-radius: 2px 2px 0 0;
+}
+#windows_signin_password{
+    grid-area: Password;
+    border-radius: 0 0 2px 2px;
+}
+#windows_forgot_password{
+    margin-top: 22px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 75%;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(33, 37, 41, 1);
+    line-height: 16px;
+}
+@media only screen and (width < 768px) {
+    #mobile_navbar{
+        display: flex;
+    }
+    #dektop_navbar{
+        display: none;
+    }
+    #home_container{
+        font-size: 65%;
+        height: 236px;
+    }
+    #home_headers{
+        top: 45%;
+    }
+    #home_container_mobile{
+        display: flex;
+    }
+    #inner_feed_container{
+        width: 100%;
+    }
+    #feeds{
+        width: 100%;
+    }
+    #feed_navbar{
+        top: 10px;
+    }
+    #mobile_feed_navbar{
+        display: flex;
+    }
+    #windows_feed_navbar{
+        display: none;
+    }
+    #window_feed_location{
+        display: none;
+    }
+    .share_feed > button > p{
+        display: block;
+        margin:0 0 0 5px;
+    }
+    .share_feed > span{
+        display: none;
+    }
+    #mobile_write_post{
+        display: flex;
+    }
+}
+  
+@media only screen and (width >= 768px) {
+    #mobile_navbar{
+        display: none;
+    }
+    #dektop_navbar{
+        display: flex;
+    }
+    #home_container{
+        height: 440px;
+    }
+    #home_header{
+        top: 75%;
+    }
+    #home_container_mobile{
+        display: none;
+    }
+    #inner_feed_container{
+        width: 72%;
+    }
+    #feeds{
+        width: 66.5%;
+    }
+    #feed_navbar{
+        top: 40px;
+    }
+    #mobile_feed_navbar{
+        display: none;
+    }
+    #windows_feed_navbar{
+        display: flex;
+    }
+    #window_feed_location{
+        display: flex;
+    }
+    .share_feed > button > p{
+        display: none;
+    }
+    .share_feed > span{
+        display: flex;
+    }
+    #mobile_write_post{
+        display: none;
+    }
+} 
